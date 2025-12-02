@@ -1,0 +1,541 @@
+/* ===================================
+   GLOBAL STYLES & RESET
+   =================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* ===================================
+     MAIN CONTAINER
+     =================================== */
+.app-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.main-card {
+  background: #1e293b;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border: 1px solid #334155;
+}
+
+/* ===================================
+     HEADER
+     =================================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-icon {
+  color: #06b6d4;
+  filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.5));
+}
+
+.header-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin: 0;
+}
+
+.header-subtitle {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+/* ===================================
+     BUTTONS
+     =================================== */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: white;
+  font-weight: 700;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 200px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(6, 182, 212, 0.4);
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #334155;
+  color: #f1f5f9;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+.btn-reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #dc2626;
+  color: white;
+  font-weight: 600;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+/* ===================================
+     CODE BLOCK
+     =================================== */
+.code-block {
+  background: #0f172a;
+  border: 2px solid #06b6d4;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.code-block pre {
+  color: #06b6d4;
+  font-family: "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* ===================================
+     INPUT SECTION
+     =================================== */
+.input-section {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  color: #f1f5f9;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.input-field {
+  width: 100%;
+  background: #0f172a;
+  color: #f1f5f9;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  resize: vertical;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+}
+
+/* ===================================
+     RESULTS CONTAINER
+     =================================== */
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ===================================
+     DECISION CARD
+     =================================== */
+.decision-card {
+  padding: 2rem;
+  border-radius: 12px;
+  border: 3px solid;
+}
+
+.decision-allowed {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: #22c55e;
+}
+
+.decision-blocked {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+}
+
+.decision-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.decision-icon-allowed {
+  color: #22c55e;
+  filter: drop-shadow(0 0 10px rgba(34, 197, 94, 0.5));
+}
+
+.decision-icon-blocked {
+  color: #ef4444;
+  filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.5));
+}
+
+.decision-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin: 0 0 0.5rem 0;
+}
+
+.decision-reason {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* ===================================
+     ANALYSIS CARDS
+     =================================== */
+.analysis-card {
+  background: #0f172a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 2px solid;
+}
+
+.pda-card {
+  border-color: #a855f7;
+}
+
+.dfa-card {
+  border-color: #f97316;
+}
+
+.analysis-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 1rem;
+}
+
+.title-icon {
+  font-size: 1.5rem;
+}
+
+/* ===================================
+     LOGS
+     =================================== */
+.log-container {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.log-item {
+  background: #1e293b;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  border-left: 4px solid #06b6d4;
+}
+
+.log-error {
+  background: rgba(239, 68, 68, 0.15);
+  border-left-color: #ef4444;
+}
+
+.log-threat {
+  background: rgba(239, 68, 68, 0.15);
+  border-left-color: #f97316;
+}
+
+.log-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.log-index {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.log-char {
+  color: #f1f5f9;
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.log-action {
+  color: #cbd5e1;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.log-stack {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stack-label {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.stack-value {
+  color: #06b6d4;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+}
+
+.no-logs,
+.no-threats {
+  color: #94a3b8;
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+}
+
+.no-threats {
+  color: #22c55e;
+}
+
+/* ===================================
+     FINAL STACK
+     =================================== */
+.final-stack {
+  background: #1e293b;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.status-valid {
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.status-invalid {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* ===================================
+     THREAT LOGS
+     =================================== */
+.threat-action {
+  color: #fca5a5;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.threat-details {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.threat-snippet {
+  color: #fb923c;
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+/* ===================================
+     TEST CASES
+     =================================== */
+.test-cases {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #334155;
+}
+
+.test-cases-title {
+  color: #f1f5f9;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.test-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.test-case-btn {
+  background: #334155;
+  border: 2px solid #475569;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.test-case-btn:hover {
+  background: #475569;
+  border-color: #06b6d4;
+  transform: translateY(-2px);
+}
+
+.test-case-id {
+  color: #06b6d4;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.test-case-label {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.test-case-url {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-family: "Courier New", monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===================================
+     RESPONSIVE DESIGN
+     =================================== */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+
+  .main-card {
+    padding: 1.5rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-reset {
+    width: 100%;
+  }
+
+  .decision-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .log-content {
+    flex-direction: column;
+  }
+
+  .test-cases-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===================================
+     SCROLLBAR STYLING
+     =================================== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
